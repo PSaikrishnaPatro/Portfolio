@@ -36,15 +36,15 @@ export function Navbar() {
       >
         <div className="relative w-full px-6 py-4 flex items-center justify-center">
 
-          {/* LEFT: KD Logo + Name + Subtitle */}
+          {/* LEFT: SP Logo + Name + Subtitle */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-3"
           >
-            {/* KD Logo (smaller circle) */}
+            {/* SP Logo (smaller circle) */}
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-left shrink-0">
-              <span className="text-white font-bold text-lg md:text-xl">KD</span>
+              <span className="text-white font-bold text-lg md:text-xl">SP</span>
             </div>
 
             {/* Name + Subtitle */}
