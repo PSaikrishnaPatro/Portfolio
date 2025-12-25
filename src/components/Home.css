@@ -184,6 +184,13 @@
     text-align: center;
   }
 
+  /* Make the background image show fully on tablet / small laptop */
+  .hero-bg {
+    background-size: contain;
+    background-position: top center;
+    height: 60vh;
+  }
+
   .hero-content {
     margin-top: 100px;
     align-items: center;
@@ -235,6 +242,14 @@
   .hero-content {
     margin-top: 60px;
     gap: 14px;
+  }
+
+  /* Ensure hero background scales and doesn't crop on small phones */
+  .hero-bg {
+    background-size: contain;
+    background-position: top center;
+    height: 50vh;
+    filter: brightness(0.95);
   }
 
   .hero-name {
