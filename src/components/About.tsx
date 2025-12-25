@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { JSX, useEffect, useRef, useState } from "react";
 import { Code, Timer, Cpu, Trophy } from "lucide-react";
 import "./About.css";
 

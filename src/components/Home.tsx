@@ -70,45 +70,45 @@ export function Home({ theme }: HeroProps) {
         }}
       />
 
-      <motion.div className="hero-content" variants={containerVariants} initial="hidden" animate="visible">
-        <motion.h1 className="hero-name" variants={itemVariants}>
+      <motion.div className="hero-content" Variants={containerVariants} initial="hidden" animate="visible">
+        <motion.h1 className="hero-name" Variants={itemVariants}>
           Hi! I’m <br />
           <span className="gradient-text hero-name-line">P Saikrishna Patro</span>
-          <motion.div className="hero-line" variants={itemVariants} />
+          <motion.div className="hero-line" Variants={itemVariants} />
         </motion.h1>
 
-        <motion.p className="hero-intro typing-effect" variants={itemVariants}>
+        <motion.p className="hero-intro typing-effect" Variants={itemVariants}>
           {typedRoles}
         </motion.p>
 
-        <motion.p className="hero-intro" variants={itemVariants}>
+        <motion.p className="hero-intro" Variants={itemVariants}>
           Creating AI-powered solutions. 
           Building modern web experiences. 
           Solving real-world problems with technology.
         </motion.p>
 
-        <motion.div className="hero-roles" variants={itemVariants}>
+        <motion.div className="hero-roles" Variants={itemVariants}>
           {roles.map((r, i) => (
-            <motion.div key={i} className="role-tag" variants={itemVariants}>
+            <motion.div key={i} className="role-tag" Variants={itemVariants}>
               {r}
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div className="hero-info" variants={itemVariants}>
+        <motion.div className="hero-info" Variants={itemVariants}>
           {[
             { label: "📍 Location", value: "Berhampur, Odisha, India" },
             { label: "💼 Expertise", value: "AI/ML, Problem Solving" },
             { label: "📞 Contact", value: "bantypatro2003@gmail.com" },
           ].map((info, i) => (
-            <motion.div key={i} className="info-card" whileHover={{ scale: 1.05, y: -3 }} variants={itemVariants}>
+            <motion.div key={i} className="info-card" whileHover={{ scale: 1.05, y: -3 }} Variants={itemVariants}>
               <h4>{info.label}</h4>
               <p>{info.value}</p>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div className="hero-socials" variants={itemVariants}>
+        <motion.div className="hero-socials" Variants={itemVariants}>
           <div className="social-group">
             <h5>Connect with me</h5>
             <div className="social-icons">
@@ -119,7 +119,7 @@ export function Home({ theme }: HeroProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 3 }}
-                  variants={itemVariants}
+                  Variants={itemVariants}
                 >
                   <img src={s.img} className="social-icon" alt="" />
                 </motion.a>
@@ -137,7 +137,7 @@ export function Home({ theme }: HeroProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 3 }}
-                  variants={itemVariants}
+                  Variants={itemVariants}
                 >
                   <img src={s.img} className="social-icon" alt="" />
                 </motion.a>
@@ -150,7 +150,7 @@ export function Home({ theme }: HeroProps) {
           className="hero-arrow"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          variants={itemVariants}
+          Variants={itemVariants}
         >
           <ArrowDown size={28} />
         </motion.div>
