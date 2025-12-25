@@ -176,7 +176,7 @@ export function About(): JSX.Element {
               transform: getImageTransform(),
             }}
           >
-            <img src="/Long.png" alt="Profile" />
+            <img src="/Long.jpg" alt="Profile" />
           </div>
 
           {/* INFO */}
