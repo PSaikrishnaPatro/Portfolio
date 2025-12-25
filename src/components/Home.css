@@ -58,9 +58,10 @@
 
 .gradient-text {
   background: linear-gradient(to right, #8e2de2, #4a00e0, #ff0080);
-  -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+-webkit-background-clip: text;
+color: transparent;
+-webkit-text-fill-color: transparent;
 }
 
 .hero-intro {
