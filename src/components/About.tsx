@@ -198,7 +198,7 @@ export function About(): JSX.Element {
               transform: getImageTransform(),
             }}
           >
-            <img src="/Long.jpg" alt="Profile" />
+            <img src="/long.jpg" alt="Profile" />
           </div>
 
           {/* INFO */}
