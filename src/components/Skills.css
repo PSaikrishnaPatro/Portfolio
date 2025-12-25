@@ -182,6 +182,18 @@
   }
 }
 
+/* Additional mobile tweaks */
+@media (max-width: 768px) {
+  .skills-container { margin: 0 1.2rem; padding-top: 3rem; padding-bottom: 3rem; }
+  .skills-stage { height: 420px; }
+}
+
+@media (max-width: 420px) {
+  .skills-stage { height: 340px; }
+  .skill-circle { width: 70px; height: 70px; }
+  .skill-circle img { width: 34px; height: 34px; }
+}
+
 /* ===============================
    SKILL PROGRESS — UPGRADED
 ================================ */

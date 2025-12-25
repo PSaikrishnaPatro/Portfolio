@@ -139,3 +139,18 @@
   --cert-accent-glow: rgba(139,92,246,0.55);
 }
 
+/* Responsive tweaks for certificates */
+@media (max-width: 900px) {
+  .cert-section { padding: 48px 0; }
+  .cert-wrapper { padding: 18px; }
+  .certs-grid { gap: 18px; }
+  .cert-img { height: 180px; }
+}
+
+@media (max-width: 480px) {
+  .cert-section { padding: 28px 0; }
+  .cert-wrapper { padding: 12px; }
+  .certs-grid { grid-template-columns: 1fr; gap: 12px; }
+  .cert-img { height: 140px; }
+}
+

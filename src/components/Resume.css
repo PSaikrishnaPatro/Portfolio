@@ -15,6 +15,18 @@
   padding: 0 28px;
 }
 
+@media (max-width: 900px) {
+  .resume-section { padding: 60px 0; }
+  .resume-container { padding: 0 16px; }
+  .profile-box { padding: 20px; margin-bottom: 30px; }
+}
+
+@media (max-width: 480px) {
+  .resume-section { padding: 36px 0; }
+  .resume-container { padding: 0 12px; }
+  .resume-card { padding: 12px 14px; }
+}
+
 /* ===============================
    TITLE
 ================================ */

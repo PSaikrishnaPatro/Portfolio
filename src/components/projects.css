@@ -227,6 +227,20 @@
   }
 }
 
+/* Extra responsive: reduce outer margins on medium/large tablets to avoid horizontal overflow */
+@media (max-width: 1400px) {
+  .projects-card { margin: 60px; }
+}
+
+@media (max-width: 1200px) {
+  .projects-card { margin: 40px 30px; }
+}
+
+@media (max-width: 800px) {
+  .projects-card { margin: 26px 16px; }
+  .projects-container { padding: 0 8px; }
+}
+
 /* Extra small devices */
 @media (max-width: 420px) {
   .projects-title {

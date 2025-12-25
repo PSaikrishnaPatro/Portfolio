@@ -165,3 +165,16 @@
   }
 }
 
+/* Additional mobile refinements */
+@media (max-width: 600px) {
+  .contact-section { padding: 3rem 0; }
+  .contact-container { max-width: 100%; padding: 0 12px; }
+  .contact-title { font-size: 2rem; margin-bottom: 1.2rem; text-align: center; }
+  .contact-grid { gap: 2rem; }
+  .contact-sub { font-size: 1.4rem; }
+  .quick-links { gap: 10px; }
+  .info-card { padding: 10px 12px; }
+  .contact-form input, .contact-form textarea { padding: 12px; font-size: 14px; }
+  .contact-form button { padding: 12px; font-size: 0.95rem; }
+}
+

@@ -157,3 +157,10 @@
   }
 }
 
+/* Make sure fixed fullscreen intro doesn't block content on small devices */
+@media (max-width: 420px) {
+  .intro-video-wrapper { position: fixed; inset: 0; padding: 8px 0; }
+  .intro-progress { width: 92%; max-width: 360px; }
+  .intro-title { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+}
+
