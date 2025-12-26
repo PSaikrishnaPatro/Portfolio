@@ -195,7 +195,7 @@ export function About(): JSX.Element {
             className="about-image"
             style={{
               width: `${getImageWidth()}%`,
-              transform: getImageTransform(),
+              transform: `translateX(-50%) ${getImageTransform()}`,
             }}
           >
             <img src="/long.jpg" alt="Profile" />
