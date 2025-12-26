@@ -71,8 +71,12 @@ export function Home({ theme }: HeroProps) {
 
   return (
     <section id="home" className="hero">
-      {/* Remove inline style - let CSS handle it */}
-      <div className="hero-bg" data-theme={theme} />
+      <div
+        className="hero-bg"
+        style={{
+          backgroundImage: `url(${theme === "light" ? "/j.jpg" : "/hero.jpg"})`,
+        }}
+      />
 
       <motion.div
         className="hero-content"
@@ -81,7 +85,7 @@ export function Home({ theme }: HeroProps) {
         animate="visible"
       >
         <motion.h1 className="hero-name" variants={itemVariants}>
-          Hi! I'm <br />
+          Hi! I’m <br />
           <span className="gradient-text hero-name-line">
             P Saikrishna Patro
           </span>

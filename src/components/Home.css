@@ -17,12 +17,11 @@
   height: 100%;
   background-image: var(--hero-bg);
   background-size: cover;
-  background-position: right center;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
   filter: brightness(1);
-  opacity: 1; /* ADDED: Full opacity on desktop */
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 /* ================= LEFT CONTENT ================= */
@@ -60,9 +59,9 @@
 .gradient-text {
   background: linear-gradient(to right, #8e2de2, #4a00e0, #ff0080);
   background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+color: transparent;
+-webkit-text-fill-color: transparent;
 }
 
 .hero-intro {
@@ -190,7 +189,7 @@
   --text: #ffffff;
   --text-muted: #4683f4;
   --accent: #12f7ff;
-  --hero-bg: url('/hero.jpg');
+  --hero-bg: url('./Hero.jpg');
   --line: #ffffff;
   --cd: #ffffff;
 }
@@ -200,7 +199,7 @@
   --text: #000000;
   --text-muted: #000000;
   --accent: #00cfff;
-  --hero-bg: url('/j.jpg');
+  --hero-bg: url('./j.jpg');
   --line: #000000;
   --cd: #000000;
 }
@@ -214,10 +213,9 @@
   }
 
   .hero-bg {
-    background-size: cover; /* CHANGED: Keep full cover on tablets */
-    background-position: center center; /* CHANGED */
-    opacity: 0.5; /* CHANGED: Reduce opacity on tablets */
-    filter: brightness(1.1); /* CHANGED */
+    background-size: contain;
+    background-position: top center;
+    height: 60vh;
   }
 
   .hero-content {
@@ -252,20 +250,20 @@
 
 @media (max-width: 600px) {
   .hero {
-    min-height: 100vh;
-    padding: 2rem 1.2rem;
+    min-height: auto;
+    padding: 4rem 1.2rem;
   }
 
   .hero-content {
-    margin-top: 20vh; /* CHANGED: Reduced from 40vh */
+    margin-top: 60px;
     gap: 14px;
   }
 
   .hero-bg {
-    background-size: contain; /* CHANGED: Back to contain for mobile */
-    background-position: center 5%; /* CHANGED: Position at top */
-    opacity: 0.7;
-    filter: brightness(1.2); /* CHANGED: Brighter */
+    background-size: contain;
+    background-position: top center;
+    height: 50vh;
+    filter: brightness(0.95);
   }
 
   .hero-name {
@@ -294,30 +292,9 @@
     gap: 1.5rem;
     margin-top: 35px;
   }
-
-  .hero-info {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .info-card {
-    width: 100%;
-    max-width: 280px;
-  }
 }
 
 @media (max-width: 430px) {
-  .hero-content {
-    margin-top: 18vh; /* CHANGED: Reduced from 35vh */
-  }
-
-  .hero-bg {
-    background-size: contain; /* CHANGED */
-    background-position: center 3%; /* CHANGED */
-    opacity: 0.65;
-    filter: brightness(1.2); /* CHANGED: Brighter */
-  }
-
   .hero-name {
     font-size: 1.9rem;
   }

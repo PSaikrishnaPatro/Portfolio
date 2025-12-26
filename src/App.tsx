@@ -25,10 +25,9 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-  document.documentElement.classList.toggle("dark", theme === "dark");
-  document.documentElement.setAttribute("data-theme", theme); // ADD THIS LINE!
-  localStorage.setItem("theme", theme);
-}, [theme]);
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <div className="bg-white dark:bg-black min-h-screen relative overflow-x-hidden transition-colors duration-300">
