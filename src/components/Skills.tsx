@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 import "./Skills.css";
 
 interface SkillRow {
@@ -85,15 +86,31 @@ const ROWS: SkillRow[][] = [
   ],
 ];
 
-/* 🚀 ADDED ANIMATION VARIANTS */
-const container = {
+/* ================= ANIMATIONS ================= */
+
+const container: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15, duration: 0.6 } },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      duration: 0.6,
+    },
+  },
 };
 
-const fadeUp = {
+const fadeUpTransition: Transition = {
+  duration: 0.7,
+  ease: [0.16, 1, 0.3, 1], // ✔ valid easing
+};
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: fadeUpTransition,
+  },
 };
 
 export const Skills: React.FC = () => {
@@ -118,7 +135,8 @@ export const Skills: React.FC = () => {
 
     circles.forEach((circle) => {
       const size = circle.offsetWidth;
-      let x: number, y: number, tries = 0;
+      let x = 0, y = 0, tries = 0;
+
       do {
         x = Math.random() * (rect.width - size - 20);
         y = Math.random() * (rect.height - size - 20);
@@ -131,8 +149,9 @@ export const Skills: React.FC = () => {
 
       const dx = (Math.random() - 0.5) * 100;
       const dy = (Math.random() - 0.5) * 100;
+
       circle.animate(
-        [{ transform: "translate(0,0)" }, { transform: `translate(${dx}px,${dy}px)` }],
+        [{ transform: "translate(0,0)" }, { transform: `translate(${dx}px, ${dy}px)` }],
         {
           duration: 6000,
           direction: "alternate",
@@ -145,17 +164,20 @@ export const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="skills-container">
-      <motion.div className="skills-header" variants={fadeUp} initial="hidden" animate={controls}>
+      <motion.div
+        className="skills-header"
+        variants={fadeUp}
+        initial="hidden"
+        animate={controls}
+      >
         <h2 className="skills-title">
           My <span className="grad">Skills</span>
         </h2>
-        <div className="skills-underline" />
         <p className="skills-description">
           ✨ Technical expertise blended with creativity — explore my core competencies below.
         </p>
       </motion.div>
 
-      {/* FLOATING ICON CLOUD */}
       <motion.div
         ref={stageRef}
         className="skills-stage"
@@ -170,13 +192,12 @@ export const Skills: React.FC = () => {
             variants={fadeUp}
             whileHover={{ scale: 1.3 }}
           >
-            <img src={s.logo} className="skill-logo" alt={s.name} />
-            <span className="skill-name">{s.name}</span>
+            <img src={s.logo} alt={s.name} />
+            <span>{s.name}</span>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* TABLE PART */}
       <div className="skills-table">
         {ROWS.map((row, i) => (
           <div key={i} className="skills-row">
@@ -198,7 +219,10 @@ export const Skills: React.FC = () => {
                         <span className="skill-percent">{item.level}%</span>
                       </div>
                       <div className="skill-progress">
-                        <div className="skill-progress-fill" style={{ width: `${item.level}%` }} />
+                        <div
+                          className="skill-progress-fill"
+                          style={{ width: `${item.level}%` }}
+                        />
                       </div>
                     </li>
                   ))}
@@ -211,4 +235,3 @@ export const Skills: React.FC = () => {
     </section>
   );
 };
-

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import "./Home.css";
 
@@ -52,20 +53,29 @@ export function Home({ theme }: HeroProps) {
   }, []);
 
   /* ================= ANIMATION VARIANTS ================= */
-  const containerVariants = {
+
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, when: "beforeChildren" },
+      transition: {
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
     },
   };
 
-  const itemVariants = {
+  const itemTransition: Transition = {
+    type: "spring",
+    stiffness: 80,
+  };
+
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 80 },
+      transition: itemTransition,
     },
   };
 
@@ -100,8 +110,8 @@ export function Home({ theme }: HeroProps) {
         </motion.p>
 
         <motion.p className="hero-intro" variants={itemVariants}>
-          Creating AI-powered solutions.  
-          Building modern web experiences.  
+          Creating AI-powered solutions.
+          Building modern web experiences.
           Solving real-world problems with technology.
         </motion.p>
 

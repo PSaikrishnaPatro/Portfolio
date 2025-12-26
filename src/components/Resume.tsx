@@ -1,21 +1,44 @@
 import { motion } from "motion/react";
+import type { Variants, Transition } from "motion/react";
 import { Download, GraduationCap, Laptop, Layers } from "lucide-react";
 import "./Resume.css";
 
 export function Resume() {
-  const fadeRight = {
+
+  /* ================= TRANSITIONS ================= */
+
+  const easeOutTransition: Transition = {
+    duration: 0.7,
+    ease: [0.16, 1, 0.3, 1],
+  };
+
+  /* ================= VARIANTS ================= */
+
+  const fadeRight: Variants = {
     hidden: { opacity: 0, x: 80 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: easeOutTransition,
+    },
   };
 
-  const fadeLeft = {
+  const fadeLeft: Variants = {
     hidden: { opacity: 0, x: -80 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: easeOutTransition,
+    },
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: easeOutTransition,
+    },
   };
 
   return (
@@ -61,8 +84,8 @@ export function Resume() {
           <motion.h3
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             className="profile-name"
           >
             P Saikrishna Patro
@@ -71,8 +94,8 @@ export function Resume() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.7 }}
+            viewport={{ once: true }}
             className="profile-info"
           >
             📚 B.Tech — Artificial Intelligence & Data Science<br />
@@ -83,8 +106,8 @@ export function Resume() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.35, duration: 0.7 }}
+            viewport={{ once: true }}
             className="profile-summary"
           >
             Passionate AI engineer experienced in Computer Vision, Deep Learning,
@@ -125,20 +148,20 @@ export function Resume() {
           <div className="resume-list">
             {[
               {
-                degree: "B.Tech in computer Science and Technology",
+                degree: "B.Tech in Computer Science and Technology",
                 school: "NIST University, Berhampur, Odisha",
                 period: "2022 – 2026",
                 detail: "Current GPA: 7.25",
               },
               {
                 degree: "Higher Secondary (12th)",
-                school: "Binayaka Archarya Collage, Berhampur",
+                school: "Binayaka Acharya College, Berhampur",
                 period: "2019 – 2021",
                 detail: "60%",
               },
               {
                 degree: "Secondary (10th)",
-                school: "Medical Campus govt.school, Berhampur",
+                school: "Medical Campus Govt. School, Berhampur",
                 period: "2018 – 2019",
                 detail: "60%",
               },
@@ -183,10 +206,10 @@ export function Resume() {
 
           <ul className="project-list">
             {[
-              "- Breast Cancer Detection using YOLO + Ensemble CNN",
-              "- DocuChat – Document Q&A Chatbot (Gemini API)",
-              "- Indian Sign Language Interpreter — in progress",
-              "- Mental Health Analyzer using NLP",
+              "Breast Cancer Detection using YOLO + Ensemble CNN",
+              "DocuChat – Document Q&A Chatbot (Gemini API)",
+              "Indian Sign Language Interpreter — in progress",
+              "Mental Health Analyzer using NLP",
             ].map((project, i) => (
               <motion.li
                 key={i}
@@ -224,9 +247,9 @@ export function Resume() {
 
           <div className="skill-tags">
             {[
-              "Python","C","C++","Java","TensorFlow","PyTorch","OpenCV",
-              "Scikit-learn","YOLO","Streamlit","React","MySQL",
-              "MongoDB","NLP","ML","DL","XAI","Creativity","Teamwork"
+              "Python", "C", "C++", "Java", "TensorFlow", "PyTorch", "OpenCV",
+              "Scikit-learn", "YOLO", "Streamlit", "React", "MySQL",
+              "MongoDB", "NLP", "ML", "DL", "XAI", "Creativity", "Teamwork"
             ].map((skill, i) => (
               <motion.span
                 key={skill}
@@ -246,4 +269,3 @@ export function Resume() {
     </section>
   );
 }
-
