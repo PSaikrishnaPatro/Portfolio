@@ -19,7 +19,7 @@ export default function App() {
   const [introDone, setIntroDone] = useState(false);
   const [openGalleryPage, setOpenGalleryPage] = useState(false);
 
-  /* Load saved theme */
+  // Load saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as
       | "light"
@@ -28,16 +28,15 @@ export default function App() {
     if (savedTheme) setTheme(savedTheme);
   }, []);
 
-  /* Apply theme to document */
+  // Apply theme
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
-    <div className="bg-white dark:bg-black min-h-screen relative overflow-x-hidden transition-colors duration-300">
-
-      {/* Navbar */}
+    <div className="bg-white dark:bg-black min-h-screen overflow-x-hidden transition-colors duration-300">
+      
       {!openGalleryPage && (
         <>
           <Navbar />
@@ -48,30 +47,25 @@ export default function App() {
       <ThemeToggle theme={theme} setTheme={setTheme} />
 
       <main>
-        {/* Intro */}
         {!introDone && <IntroVideo onFinish={() => setIntroDone(true)} />}
 
         {introDone && (
           <>
             {openGalleryPage ? (
-              /* GalleryPage REQUIRES theme */
               <GalleryPage
                 theme={theme}
                 onBack={() => setOpenGalleryPage(false)}
               />
             ) : (
               <>
-                {/* Components that ACCEPT theme */}
                 <Home theme={theme} />
                 <About />
                 <Projects />
+                <Skills />
                 <Gallery
                   theme={theme}
                   onOpenGalleryPage={() => setOpenGalleryPage(true)}
                 />
-
-                {/* Components that DO NOT accept theme */
-                <Skills />
                 <Resume />
                 <Certificates />
                 <Blog />
@@ -83,7 +77,7 @@ export default function App() {
       </main>
 
       {!openGalleryPage && (
-        <footer className="relative border-t border-gray-200 dark:border-white/10 py-8">
+        <footer className="border-t border-gray-200 dark:border-white/10 py-8">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <p className="text-gray-600 dark:text-white/60">
               © 2025 P Saikrishna Patro.
