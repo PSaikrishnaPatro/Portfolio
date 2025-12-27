@@ -63,14 +63,14 @@ export default function App() {
               <>
                 {/* Components that ACCEPT theme */}
                 <Home theme={theme} />
+                <About />
                 <Projects />
                 <Gallery
                   theme={theme}
                   onOpenGalleryPage={() => setOpenGalleryPage(true)}
                 />
 
-                {/* Components that DO NOT accept theme */}
-                <About />
+                {/* Components that DO NOT accept theme */
                 <Skills />
                 <Resume />
                 <Certificates />
