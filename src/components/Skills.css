@@ -1,39 +1,47 @@
-/* Container */
-.skills-title{
+/* ===============================
+   CONTAINER
+================================ */
+.skills-title {
   text-align: center;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: inherit; /* inherit global text color */
+  color: inherit;
 }
 
-.skills-description{
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 3rem;
-    color: inherit; /* inherit global text color */
+.skills-description {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  color: inherit;
 }
 
 .skills-container {
   position: relative;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin: 0 5%; /* responsive margin */
-  color: inherit; /* inherit global text color */
+  margin: 0 5%;
+  color: inherit;
   overflow: hidden;
 }
 
-/* Header */
+/* ===============================
+   HEADER
+================================ */
 .skills-header h2 {
   font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
 }
+
 .skills-header p {
   text-align: center;
   color: inherit;
 }
 
+/* ===============================
+   STAGE
+================================ */
 .skills-stage {
   position: relative;
   width: 100%;
@@ -42,25 +50,24 @@
   margin-bottom: 4rem;
   overflow: hidden;
 
-  /* 🔥 Neon Highlighted Border */
   border: 2px solid var(--accent);
   box-shadow: 0 0 8px var(--accent), 0 0 8px rgba(0, 255, 255, 0.4);
   transition: 0.35s ease;
 }
 
-/* Optional: Hover boost effect */
 .skills-stage:hover {
   box-shadow: 0 0 20px var(--accent), 0 0 20px rgba(0, 255, 255, 0.7);
 }
 
-
-/* Skill Circles */
+/* ===============================
+   SKILL CIRCLES
+================================ */
 .skill-circle {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.05); /* subtle transparent bg */
-  border: 1px solid rgba(0,0,0,0.1); /* subtle border */
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
   position: absolute;
   display: flex;
@@ -80,7 +87,7 @@
 
 .skill-circle:hover {
   transform: scale(1.3);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .skill-circle span {
@@ -90,10 +97,16 @@
   color: var(--c-text);
 }
 
-.root:{
+/* ===============================
+   GLOBAL VARIABLE FIX (ERROR FIX)
+================================ */
+:root {
   --c-text: #000000;
 }
-/* Skills Table */
+
+/* ===============================
+   SKILLS TABLE
+================================ */
 .skills-table {
   max-width: 1200px;
   margin: 0 auto;
@@ -109,29 +122,28 @@
 .skill-box {
   border-radius: 1rem;
   padding: 1.5rem;
-  background: inherit; /* match global theme */
+  background: inherit;
   border: 1.5px solid var(--c);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .skill-box h3 {
   font-weight: 600;
-  color : var(--c); /* Highlight color */
-  text-align: center; /* Center title */
+  color: var(--c);
+  text-align: center;
   margin-bottom: 0.75rem;
   font-size: 1.15rem;
 }
 
-/* Make the list centered and clean */
 .skill-box ul {
   list-style: none;
   padding-left: 0;
-  text-align: center; /* Center list content */
+  text-align: center;
 }
 
 .skill-box li {
@@ -141,11 +153,13 @@
   transition: color 0.25s ease;
 }
 
-/* Optional hover effect */
 .skill-box li:hover {
   color: var(--text);
 }
 
+/* ===============================
+   THEME TEXT COLORS
+================================ */
 [data-theme="dark"] {
   --text: rgba(0, 255, 255, 0.7);
 }
@@ -153,21 +167,25 @@
 [data-theme="light"] {
   --text: #fcfcfc;
 }
- 
 
-/* Responsive */
+/* ===============================
+   RESPONSIVE
+================================ */
 @media (max-width: 768px) {
   .skills-stage {
     height: 400px;
   }
+
   .skill-circle {
     width: 80px;
     height: 80px;
   }
+
   .skill-circle img {
     width: 40px;
     height: 40px;
   }
+
   .skill-circle span {
     font-size: 11px;
   }
@@ -177,34 +195,48 @@
   .skills-stage {
     height: 350px;
   }
+
   .skill-box {
     padding: 1rem;
   }
 }
 
-/* Additional mobile tweaks */
 @media (max-width: 768px) {
-  .skills-container { margin: 0 1.2rem; padding-top: 3rem; padding-bottom: 3rem; }
-  .skills-stage { height: 420px; }
+  .skills-container {
+    margin: 0 1.2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .skills-stage {
+    height: 420px;
+  }
 }
 
 @media (max-width: 420px) {
-  .skills-stage { height: 340px; }
-  .skill-circle { width: 70px; height: 70px; }
-  .skill-circle img { width: 34px; height: 34px; }
+  .skills-stage {
+    height: 340px;
+  }
+
+  .skill-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-circle img {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 /* ===============================
    SKILL PROGRESS — UPGRADED
 ================================ */
-
-/* The row */
 .skill-item {
   margin-bottom: 18px;
   padding: 2px 0;
 }
 
-/* Skill name + percentage */
 .skill-item-header {
   display: flex;
   justify-content: space-between;
@@ -214,26 +246,26 @@
   margin-bottom: 6px;
 }
 
-/* Percentage */
 .skill-percent {
   font-weight: 700;
   background: var(--skill-text-grad);
+
+  /* Standard + WebKit (warning fix) */
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Track */
 .skill-progress {
   position: relative;
   width: 100%;
-  height: 12px; /* Bigger for premium look */
+  height: 12px;
   background: var(--skill-track);
   border-radius: 999px;
   overflow: hidden;
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
-/* Fill */
 .skill-progress-fill {
   height: 100%;
   width: 0%;
@@ -247,12 +279,19 @@
     0 0 25px var(--skill-glow);
 }
 
-/* Striped shine effect */
 @keyframes shine {
-  0%   { background-position: 0% 0; }
-  100% { background-position: 300% 0; }
+  0% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: 300% 0;
+  }
 }
 
+/* ===============================
+   SKILL VARIABLES
+================================ */
 :root {
   --skill-track: #e5e7eb;
   --skill-fill: linear-gradient(90deg, #2563eb, #22d3ee, #0ea5e9, #2563eb);
@@ -261,9 +300,8 @@
 }
 
 .dark {
-  --skill-track: rgba(255,255,255,0.08);
+  --skill-track: rgba(255, 255, 255, 0.08);
   --skill-fill: linear-gradient(90deg, #7c3aed, #4f46e5, #06b6d4, #7c3aed);
   --skill-glow: #8b5cf6;
   --skill-text-grad: linear-gradient(90deg, #c084fc, #818cf8);
 }
-

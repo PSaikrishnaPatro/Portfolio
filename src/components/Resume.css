@@ -36,7 +36,11 @@
   font-weight: 400;
   margin-bottom: 20px;
   letter-spacing: 2px;
+
   background: var(--resume-grad);
+
+  background-clip: text;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
