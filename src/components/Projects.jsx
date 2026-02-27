@@ -18,7 +18,7 @@ const PROJECTS = [
     ss: "/mentalhealth.jpg",
     tech: ["Python", "Transformers", "NLTK", "scikit-learn"],
     live: "https://mental-health-analyzer-2026.streamlit.app/",
-    code: "https://github.com/PSaikrishnaPatro/Mental-Health-Analyzerr",
+    code: "https://github.com/PSaikrishnaPatro/Mental-Health-Analyzer",
   },
   {
     title: "🤖 Indian Sign Language Interpreter",
